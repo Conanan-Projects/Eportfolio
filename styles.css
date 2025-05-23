@@ -283,11 +283,92 @@ h2 {
     font-size: 1rem;
   }
   
-  .nav-links {
-    display: none;
-  }
 
   .skills-container {
     padding: 0 1rem;
+  }
+  
+}
+
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    background: var(--background-color);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    padding: 1rem 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-link {
+    padding: 1rem;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .cta-button {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 120px;
+  }
+
+  .profile-image-wrapper {
+    height: 300px;
+    order: -1;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hello {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .project-card {
+    margin-bottom: 1rem;
+  }
+
+  .project-image-container {
+    height: 200px;
   }
 }
