@@ -406,9 +406,10 @@ section.in-view {
 }
 
 /* Performance Optimization */
-/* @media (prefers-reduced-motion: reduce) {
+@media (max-width: 768px) {
   * {
     animation: none !important;
     transition: none !important;
   }
-} */
+}
+
