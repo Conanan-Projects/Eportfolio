@@ -411,5 +411,11 @@ section.in-view {
     animation: none !important;
     transition: none !important;
   }
+
+  .project-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
 }
+
 
