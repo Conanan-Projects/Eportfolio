@@ -3,6 +3,39 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("js-enabled");
 
   // ======================
+  // Theme Toggle Functionality
+  // ======================
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = themeToggle.querySelector("i");
+
+  // Check for saved theme preference or prefer-color-scheme
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  const savedTheme = localStorage.getItem("theme");
+
+  // Apply the saved theme or use system preference
+  if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+    themeIcon.classList.replace("fa-moon", "fa-sun");
+  } else if (!savedTheme && !prefersDarkScheme.matches) {
+    document.body.classList.add("light-mode");
+    themeIcon.classList.replace("fa-moon", "fa-sun");
+  }
+
+  // Theme toggle click handler
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+
+    // Update icon
+    if (document.body.classList.contains("light-mode")) {
+      themeIcon.classList.replace("fa-moon", "fa-sun");
+      localStorage.setItem("theme", "light");
+    } else {
+      themeIcon.classList.replace("fa-sun", "fa-moon");
+      localStorage.setItem("theme", "dark");
+    }
+  });
+
+  // ======================
   // Mobile Menu Functionality
   // ======================
   const burger = document.querySelector(".burger");

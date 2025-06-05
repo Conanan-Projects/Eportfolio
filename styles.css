@@ -1,15 +1,34 @@
 :root {
+  /* Dark theme variables (default) */
   --primary-color: #e31b54;
   --background-color: #111111;
   --text-color: #ffffff;
   --secondary-bg: #1a1a1a;
+  --nav-bg: rgba(17, 17, 17, 0.9);
+  --card-bg: #1a1a1a;
+  --skill-bar-bg: #1a1a1a;
   --spacing-unit: 2rem;
+  
+  /* Transition for theme switching */
+  --transition-speed: 0.1s;
+}
+
+/* Light theme variables */
+body.light-mode {
+  --background-color: #f8f9fa;
+  --text-color: #212529;
+  --secondary-bg: #e9ecef;
+  --nav-bg: rgba(248, 249, 250, 0.9);
+  --card-bg: #ffffff;
+  --skill-bar-bg: #dee2e6;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: background-color var(--transition-speed) ease, 
+              color var(--transition-speed) ease;
 }
 
 html {
@@ -28,7 +47,7 @@ nav {
   top: 0;
   width: 100%;
   padding: 1.5rem;
-  background: rgba(17, 17, 17, 0.9);
+  background: var(--nav-bg);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
@@ -65,6 +84,30 @@ nav {
   transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  color: var(--primary-color);
+}
 
 .cta-button {
   background: var(--primary-color);
@@ -91,8 +134,7 @@ main {
   gap: 4rem;
   align-items: center;
   min-height: 100vh;
-  padding-top: 80px;
-  margin-top: 80px;
+  
 }
 
 .hero-content {
@@ -100,18 +142,35 @@ main {
 }
 
 .profile-image-wrapper {
+  position: relative;
   width: 100%;
-  height: 600px;
-  border-radius: 8px;
-  overflow: hidden; /* this is key */
+  max-width: 400px;
+  aspect-ratio: 3/4;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.profile-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.profile-image-wrapper:hover {
+  transform: translateY(-8px);
 }
 
 .profile-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover; /* changed from contain to cover */
+  object-position: center top;
+  transition: transform 0.4s ease;
+  overflow-clip-margin: unset;
 }
-
 
 .hello {
   font-size: 6rem;
@@ -161,7 +220,7 @@ h2 {
 
 .skill-bar {
   height: 8px;
-  background: var(--secondary-bg);
+  background: var(--skill-bar-bg);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -173,32 +232,30 @@ h2 {
   transition: width 1s ease-in-out;
 }
 
-/* Grid container for project cards */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: var(--spacing-unit);
   margin-top: var(--spacing-unit);
-  align-items: stretch; /* Ensures all grid items stretch to equal height */
+  align-items: stretch;
 }
 
-/* Individual project card */
 .project-card {
-  background: var(--secondary-bg);
+  background: var(--card-bg);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color var(--transition-speed) ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .project-card:hover {
   transform: translateY(-5px);
 }
 
-/* Container for the project image */
 .project-image-container {
-  height: 300px; /* Increased height */
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -206,28 +263,23 @@ h2 {
   background-color: #fff;
 }
 
-/* Project image styling */
 .project-image {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Fill the container while maintaining aspect ratio */
+  object-fit: contain;
   object-position: center;
-  border-radius: 4px; /* Optional: adds slight rounding to images */
+  border-radius: 4px;
 }
 
-
-/* Project title */
 .project-card h3 {
   padding: 1rem var(--spacing-unit);
   color: var(--primary-color);
 }
 
-/* Project description */
 .project-card p {
   padding: 0 var(--spacing-unit) var(--spacing-unit);
   opacity: 0.9;
 }
-
 
 .contact-info {
   margin-bottom: var(--spacing-unit);
@@ -290,13 +342,10 @@ h2 {
     font-size: 1rem;
   }
   
-
   .skills-container {
     padding: 0 1rem;
   }
-  
 }
-
 
 .burger {
   display: none;
@@ -345,7 +394,8 @@ h2 {
   }
 
   .profile-image-wrapper {
-    height: 300px;
+    max-width: 300px;
+    margin: 0 auto;
     order: -1;
   }
 
@@ -380,7 +430,6 @@ h2 {
   }
 }
 
-/* Scroll Progress Indicator */
 body::before {
   content: '';
   position: fixed;
@@ -392,7 +441,6 @@ body::before {
   width: var(--scroll);
 }
 
-/* Section Animations */
 section {
   opacity: 0;
   transform: translateY(50px);
@@ -404,7 +452,6 @@ section.in-view {
   transform: translateY(0);
 }
 
-/* Performance Optimization */
 @media (max-width: 768px) {
   * {
     animation: none !important;
@@ -416,5 +463,3 @@ section.in-view {
     box-shadow: none !important;
   }
 }
-
-
