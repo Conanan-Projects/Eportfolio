@@ -1,181 +1,323 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Philippe | Web Developer</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <script type="module" src="script.js"></script>
-    
-  </head>
-  <body>
-    <nav>
-      <button class="burger" aria-label="Toggle menu">
-        <i class="fas fa-bars"></i>
-      </button>
-      <a href="#home" class="logo">JC</a>
+<html lang="en" data-theme="dark">
+<head>
+  <title>Philippe Conanan | Full-Stack Developer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Philippe Conanan - Full-stack web developer specializing in React.js and Laravel">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <script type="module" src="script.js"></script>
+</head>
+
+<body>
+<!-- Loading Screen -->
+<div id="loader">
+  <div class="loader-content">
+    <span id="loader-text">0%</span>
+    <div class="loader-bar">
+      <div class="loader-fill" id="loader-fill"></div>
+    </div>
+  </div>
+</div>
+<!-- Site Content -->
+<div id="site-content" style="display: none;">
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <img id="logo-img" src="img/w-eport-logo.png" alt="Philippe Conanan Logo" />
+      </a>
       <div class="nav-links">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#home" class="nav-link">HOME</a>
+        <a href="#skills" class="nav-link">SKILLS</a>
+        <a href="#projects" class="nav-link">PROJECTS</a>
+        <a href="#contact" class="nav-link">CONTACT</a>
       </div>
       <div class="nav-right">
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
           <i class="fas fa-moon"></i>
         </button>
-        <a href="#contact" class="cta-button">Get in Touch</a>
+        <a href="#contact" class="cta-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+               viewBox="0 0 16 16" class="arrow-icon">
+            <path fill-rule="evenodd"
+                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1
+          .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L13.293
+          8.5H1.5A.5.5 0 0 1 1 8z" />
+          </svg>
+          GET IN TOUCH
+        </a>
+
+
+        <button class="burger" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
-    </nav>
-    
-    <main>
-      <section id="home" class="hero">
-        <div class="hero-content">
-          <h1 class="hello">Hello.</h1>
-          <p class="subtitle">I'm John Philippe Conanan</p>
-          <p class="bio">A web developer focused on building clean, functional, and user-friendly web applications.</p>
-          <a href="#projects" class="cta-button">View My Work</a>
-        </div>
-        <div class="profile-image-wrapper">
-          <img src="img/Profile.JPG" alt="John Doe" class="profile-image" loading="lazy">
-        </div>
+    </div>
+  </nav>
 
-      </section>
-
-      <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-          <div class="skill">
-            <div class="skill-header">
-              <span>React.js</span>
-              <span>70%</span>
-            </div>
-            <div class="skill-bar" data-percent="70%">
-              <div class="skill-progress"></div>
-            </div>
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="hero-text">
+          <span class="greeting">HELLO, I'M</span>
+          <span class="name">PHILIPPE CONANAN</span>
+          <span class="tagline">WEB DEVELOPER</span>
+        </h1>
+        <p class="bio">Building clean, functional web experiences with React.js & Laravel</p>
+        <div class="hero-cta">
+          <a href="#projects" class="cta-button primary">View Projects</a>
+          <a href="#contact" class="cta-button secondary">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="profile-container">
+          <div class="profile-image-wrapper">
+            <img src="img/Profile.JPG" alt="Philippe Conanan" class="profile-image" loading="lazy">
           </div>
-          
-          <div class="skill">
-            <div class="skill-header">
-              <span>Laravel</span>
-              <span>85%</span>
-            </div>
-            <div class="skill-bar" data-percent="85%">
-              <div class="skill-progress"></div>
-            </div>
-          </div>
-          
-          <div class="skill">
-            <div class="skill-header">
-              <span>TypeScript</span>
-              <span>70%</span>
-            </div>
-            <div class="skill-bar" data-percent="70%">
-              <div class="skill-progress"></div>
-            </div>
-          </div>
-          
-          <div class="skill">
-            <div class="skill-header">
-              <span>MySQL</span>
-              <span>75%</span>
-            </div>
-            <div class="skill-bar" data-percent="75%">
-              <div class="skill-progress"></div>
-            </div>
-          </div>
-          
-          <div class="skill">
-            <div class="skill-header">
-              <span>MongoDB</span>
-              <span>65%</span>
-            </div>
-            <div class="skill-bar" data-percent="65%">
-              <div class="skill-progress"></div>
-            </div>
-          </div>
-          
-          <div class="skill">
-            <div class="skill-header">
-              <span>WordPress</span>
-              <span>65%</span>
-            </div>
-            <div class="skill-bar" data-percent="65%">
-              <div class="skill-progress"></div>
-            </div>
+          <div class="tech-icons">
+            <i class="fab fa-react"></i>
+            <i class="fab fa-laravel"></i>
+            <i class="fab fa-js"></i>
+            <i class="fas fa-database"></i>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="projects">
-        <h2>My Works</h2>
-        <div class="project-grid">
-          <div class="project-card">
-            <div class="project-image-container">
-              <img src="img/projects/Banana.png" alt="Project One" class="project-image">
-            </div>
-            <h3>E-commerce</h3>
-            <p>A responsive e-commerce web application built with Laravel, featuring product listings, shopping cart functionality, and a secure checkout process.</p>
-          </div>
-          <div class="project-card">
-            <div class="project-image-container">
-              <img src="img/projects/dashboard.png" alt="Project Two" class="project-image">
-            </div>
-            <h3>User Dashboard</h3>
-            <p>A web-based user authentication system encompassing login, registration, and a personalized dashboard interface.</p>
-          </div>
-          <div class="project-card">
-            <div class="project-image-container">
-              <img src="img/projects/inventory.png" alt="Project Three" class="project-image">
-            </div>
-            <h3>Inventory Management System</h3>
-            <p>A web application designed to streamline inventory tracking and management, enabling users to monitor stock levels and manage product entries efficiently.</p>
-          </div>
-
-          <div class="project-card">
-            <div class="project-image-container">
-              <img src="img/projects/foodblog.png" alt="Project Three" class="project-image">
-            </div>
-            <h3>Food Blog</h3>
-            <p>A simple and responsive food blog built with HTML and CSS, featuring recipe sections, food images, and clean navigation.</p>
-          </div>
-
-          <div class="project-card">
-            <div class="project-image-container">
-              <img src="img/projects/capstone.png" alt="Project Three" class="project-image">
-            </div>
-            <h3>Information management System</h3>
-            <p>An Information Management System built with Laravel as part of a college capstone project, designed to efficiently manage, organize, and track data with a user-friendly interface.</p>
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="section-header">
+        <h2>Technical Skills</h2>
+        <p>Technologies I work with</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <div class="skill-tags">
+            <span>React.js</span>
+            <span>JavaScript</span>
+            <span>TypeScript</span>
+            <span>HTML5</span>
+            <span>CSS3/SASS</span>
+            <span>Responsive Design</span>
           </div>
         </div>
-      </section>
 
-      <section id="contact">
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <div class="skill-tags">
+            <span>Laravel</span>
+            <span>PHP</span>
+            <span>Node.js</span>
+            <span>Express</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Databases</h3>
+          <div class="skill-tags">
+            <span>MySQL</span>
+            <span>MongoDB</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Tools & Platforms</h3>
+          <div class="skill-tags">
+            <span>Git/GitHub</span>
+            <span>WordPress</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <p>My recent work</p>
+      </div>
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-image-container">
+            <img loading="lazy" src="img/projects/Banana.png" alt="E-commerce Project" class="project-image">
+            <div class="project-overlay">
+              <div class="tech-tags">
+                <span>Laravel</span>
+                <span>Livewire</span>
+                <span>MySQL</span>
+              </div>
+              <div class="project-links">
+                <a href="https://cinedb-c.vercel.app/" class="project-link" aria-label="Live Demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link" aria-label="Source Code">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>E-commerce Platform</h3>
+            <p>Full-featured online store with cart functionality, payment integration, and admin dashboard.</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-image-container">
+            <img loading="lazy" src="img/projects/dashboard.png" alt="User Dashboard Project" class="project-image">
+            <div class="project-overlay">
+              <div class="tech-tags">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a href="https://cinedb-c.vercel.app/" class="project-link" aria-label="Live Demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link" aria-label="Source Code">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>User Dashboard System</h3>
+            <p>Customizable dashboard with user management, analytics, and role-based access control.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-image-container">
+            <img loading="lazy" src="img/projects/inventory.png" alt="Inventory System Project" class="project-image">
+            <div class="project-overlay">
+              <div class="tech-tags">
+                <span>Laravel</span>
+                <span>Vue.js</span>
+                <span>MySQL</span>
+              </div>
+              <div class="project-links">
+                <a href="https://cinedb-c.vercel.app/" class="project-link" aria-label="Live Demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link" aria-label="Source Code">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Inventory Management</h3>
+            <p>Real-time inventory tracking with barcode scanning, reporting, and supplier management.</p>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <div class="project-image-container">
+            <img loading="lazy" src="img/projects/cinedb.png" alt="Movie Database Project" class="project-image">
+            <div class="project-overlay">
+              <div class="tech-tags">
+                <span>React.js</span>
+                <span>Appwrite</span>
+              </div>
+              <div class="project-links">
+                <a href="https://cinedb-c.vercel.app/" class="project-link" aria-label="Live Demo" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="project-link" aria-label="Source Code">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Movie Database</h3>
+            <p>A movie discovery web app built with React and Appwrite. It features real-time search, trending movies, filters by genre, and detailed views with trailers and ratings.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+    <div class="contact-container">
+      <div class="contact-info">
         <h2>Get in Touch</h2>
-        <div class="contact-info">
+        <p>Let's discuss your project or opportunity</p>
+
+        <div class="contact-details">
           <div class="contact-item">
             <i class="fas fa-envelope"></i>
-            <a href="mailto:johnphilippeconanan@gmail.com">johnphilippeconanan@gmail.com</a>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:johnphilippeconanan@gmail.com">johnphilippeconanan@gmail.com</a>
+            </div>
           </div>
           <div class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
-            <span>Pampanga, Philippines</span>
+            <div>
+              <h3>Location</h3>
+              <span>Pampanga, Philippines</span>
+            </div>
           </div>
         </div>
+
         <div class="social-links">
-          <a href="https://github.com/Conanan-Projects" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/philippe-conanan/" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://www.facebook.com/johnphilippe.conanan/" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-facebook"></i>
-          </a>
+          <a href="https://github.com/Conanan-Projects" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/philippe-conanan/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/johnphilippe.conanan/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         </div>
-      </section>
-    </main>
-  </body>
+      </div>
+
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <!-- reCAPTCHA -->
+          <div class="form-group">
+            <div class="g-recaptcha" data-sitekey="6LcsdIUrAAAAAPPZyyEQmWJeHOZq9ubzCBLpu4sA"></div>
+          </div>
+
+          <button type="submit" class="cta-button primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <p>Designed & Built by John Philippe Conanan</p>
+    <a href="#home" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+  </footer>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+  emailjs.init("tl_4Sss74Hx0TPDmC");
+</script>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
 </html>
