@@ -67,8 +67,7 @@ body {
   background-color: var(--bg);
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
-  padding-left: var(--spacing-md);
-  padding-right: var(--spacing-md);
+
 }
 
 /* Typography */
@@ -311,6 +310,8 @@ nav {
 /* Hero Section */
 .hero {
   margin-top: 70px;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -444,8 +445,7 @@ nav {
 /* Projects Section */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  margin-top: var(--spacing-unit);
+  grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
   align-items: stretch;
 }
 
@@ -468,7 +468,7 @@ nav {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background-color: #fff;
+  background-color: var(--bg);
 }
 
 .project-image {
@@ -544,6 +544,8 @@ nav {
 
 /* Contact Section */
 .contact-container {
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-lg);
@@ -678,7 +680,11 @@ footer {
 /* Responsive Design */
 @media (max-width: 992px) {
   .logo img {
+    position: relative;
     width: 100px;
+  }
+  .cta-button{
+    display: none;
   }
   .hero {
     grid-template-columns: 1fr;
@@ -696,6 +702,8 @@ footer {
 
   .contact-container {
     grid-template-columns: 1fr;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -718,6 +726,7 @@ footer {
   }
 
   .burger {
+    margin-right: var(--spacing-xs);
     display: block;
   }
 
