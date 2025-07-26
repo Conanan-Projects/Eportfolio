@@ -30,9 +30,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const burger = document.querySelector(".burger");
   const navLinks = document.querySelector(".nav-links");
 
+  // create span for burger lines
+  if (!burger.querySelector("span")) {
+    const span = document.createElement("span");
+    burger.appendChild(span);
+  }
+
   burger.addEventListener("click", () => {
     navLinks.classList.toggle("active");
     burger.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      burger.classList.remove("active");
+    });
   });
 
   // Smooth Scroll
